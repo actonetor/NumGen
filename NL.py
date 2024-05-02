@@ -13,6 +13,7 @@ init()
 def generate_phone_number(chiffre_initial):
     phone_number = str(chiffre_initial)
     for _ in range(8):
+        #8 pour fr
         phone_number += str(random.randint(0, 9))
     return phone_number
 
@@ -45,7 +46,9 @@ def generate_numbers():
     chiffre_initial = input("Generer des 06 ou 07 ?  (6, 7, ou A pour aléatoire) : ")
     if chiffre_initial.lower() == "a":
         chiffre_initial = random.choice(["6", "7"])
+        #6 ou 7
     elif chiffre_initial not in ["6", "7"]:
+        #6 ou 7
         print("Chiffre invalide. Veuillez entrer 6, 7, ou A.")
         return
 
@@ -58,14 +61,29 @@ def generate_numbers():
         print("\n1. Orange")
         print("2. SFR")
         print("3. Bouygues Telecom")
+        print("4. Free")
+        print("5. Poste telecom")
+        print("6. Lyca")
+        print("7. Prixtel")
+        print("8. Lebara")
         operateur_choisi = input("\nChoisissez un opérateur (1, 2, 3, etc.) : ")
         operateur_choisi = operateur_choisi.strip().lower()
         if operateur_choisi == "1":
-            operateur = "Orange"
+            operateur = "Orange France"
         elif operateur_choisi == "2":
             operateur = "SFR"
         elif operateur_choisi == "3":
-            operateur = "Bouygues Telecom"
+            operateur = "Bouygues"
+        elif operateur_choisi == "4":
+            operateur = "Free Mobile"
+        elif operateur_choisi == "5":
+            operateur = "La poste telecom"
+        elif operateur_choisi == "6":
+            operateur = "Lycamobile"
+        elif operateur_choisi == "7":
+            operateur = "Prixtel"
+        elif operateur_choisi == "8":
+            operateur = "Lebara France Limited"
         else:
             print("Opérateur invalide. Veuillez réessayer.")
             return
